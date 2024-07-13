@@ -1,6 +1,6 @@
 export const url = 'https://podarkus.ru';
 const email = 'lkudryakovf@mail.ru';
-const password = '21ipivef';
+const password = '';
 
 export const login = async (page) => {
     await page.goto(url);
