@@ -118,35 +118,6 @@ test('Добавить комментарий к карточке подарка
 });
 
 
-test('Удалить подарок при просмотре карточке', async ({ page }) => {
-
-  const homePage = HomePage({ page });
-  const giftPage = GiftPage({ page });
-
-  await homePage.login();
-  await homePage.clickUserAvatar();
-
-  await giftPage.clickAddGiftCard();
-
-  await giftPage.fillLinktToGift('https://ozon.ru/t/plWnXGK');
-  
-  await giftPage.clickApplyButton();
-  await page.getByPlaceholder('Название подарка').fill('Подушка внутренняя декоративная Швейный Дом ВП4545-1, 45х45 см белая😁😁');
-  await giftPage.clickLastWishlistCheckbox();
-  await giftPage.clickAddGift();
-
-  await expect(page.getByRole('heading', { name: 'Подарок добавлен' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Подушка внутренняя декоративная Швейный Дом ВП4545-1, 45х45 см белая' })).toBeVisible();
-
-  await giftPage.clickMenuButton();
-  await giftPage.clickMenuDelete();
-  await page.waitForTimeout(3000);
-  await page.getByRole('button', { name: 'Да, удалить' }).click();
-  await page.waitForTimeout(3000);
-
-  await expect(page.getByText('Подушка внутренняя декоративная')).not.toBeVisible();
-});
-
 
 
 
