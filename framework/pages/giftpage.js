@@ -60,7 +60,7 @@ export function GiftPage({ page }) {
     } 
 
     const clicklistCheckbox = async (name) => {
-        await page.getByRole('main').getByRole('list').locator('li').filter({ hasText: name }).locator('svg').click();
+        await page.getByRole('main').getByRole('list').locator('li').filter({ hasText: name }).first().locator('svg').click();
     }
     
     const clickMyGifts = async () => {

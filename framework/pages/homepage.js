@@ -37,16 +37,16 @@ export function HomePage({ page }) {
     const clickPudarkusLogo = async () => {
         await page.getByTestId('pudarkus-logo').click();
     }
-    
+
     const clickSearch = async () => {
         await page.getByRole('textbox', { name: 'Поиск' }).click();
     }
-    
-    const clickAddGift = async ()  => {
-    await page.getByRole('link', { name: 'Добавить подарок' }).click();
+
+    const clickAddGift = async () => {
+        await page.getByRole('link', { name: 'Добавить подарок' }).click();
     }
 
-    
+
 
     return {
         login,
@@ -58,6 +58,6 @@ export function HomePage({ page }) {
         clickPudarkusLogo,
         clickSearch,
         clickAddGift,
-        
+
     }
 }

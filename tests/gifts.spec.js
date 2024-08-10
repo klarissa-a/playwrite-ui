@@ -88,12 +88,6 @@ test('Добавление подарка с созданием списка', a
   await giftPage.clicklistCheckbox(/^Пупсик$/);
   await giftPage.clickAddGift();
   await expect(page.getByRole('heading', { name: 'Подарок добавлен' })).toBeVisible();
-
-  /*await page.getByText('Вишлисты', { exact: true }).click();
-  await page.locator('div').filter({ hasText: /^РедактироватьУдалитьПупсикПодарков: 1‌$/ }).getByRole('button').click();
-  await page.getByText('Удалить').first().click();
-  await page.getByRole('button', { name: 'Да, удалить' }).click();
-  await expect(page.getByText('Пупсик')).not.toBeVisible();*/
 });
 
 
