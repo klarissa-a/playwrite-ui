@@ -30,7 +30,7 @@ export function HomePage({ page }) {
         await page.getByTestId('user-menu-button').click();
     }
 
-    const  clickUserAvatar = async () => {
+    const clickUserAvatar = async () => {
         await page.locator('a[href^="/user/"]').click();
     }
 
@@ -41,7 +41,12 @@ export function HomePage({ page }) {
     const clickSearch = async () => {
         await page.getByRole('textbox', { name: 'Поиск' }).click();
     }
+    
+    const clickAddGift = async ()  => {
+    await page.getByRole('link', { name: 'Добавить подарок' }).click();
+    }
 
+    
 
     return {
         login,
@@ -52,5 +57,7 @@ export function HomePage({ page }) {
         clickUserAvatar,
         clickPudarkusLogo,
         clickSearch,
+        clickAddGift,
+        
     }
 }
